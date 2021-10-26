@@ -1,0 +1,13 @@
+[remap]
+
+importer="com.technohacker.piskel"
+type="StreamTexture"
+path="res://.import/Verme.piskel-f18cd9451728d77faf96a659599e6268.stex"
+
+[deps]
+
+source_file="res://src/assets/sprites/Enemies/Verme.piskel"
+dest_files=[ "res://.import/Verme.piskel-f18cd9451728d77faf96a659599e6268.stex" ]
+
+[params]
+

@@ -1,0 +1,13 @@
+[remap]
+
+importer="com.technohacker.piskel"
+type="StreamTexture"
+path="res://.import/Canom.piskel-95e7ddec5dd3798c9083e2b7f9a2380a.stex"
+
+[deps]
+
+source_file="res://src/assets/sprites/Guns/Weapons Sprites/Canom.piskel"
+dest_files=[ "res://.import/Canom.piskel-95e7ddec5dd3798c9083e2b7f9a2380a.stex" ]
+
+[params]
+

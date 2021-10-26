@@ -1,0 +1,13 @@
+[remap]
+
+importer="com.technohacker.piskel"
+type="StreamTexture"
+path="res://.import/revolve.piskel-f04829d58ccc6e4c9b8cbc51bb40276e.stex"
+
+[deps]
+
+source_file="res://src/assets/sprites/Guns/Weapons Sprites/revolve.piskel"
+dest_files=[ "res://.import/revolve.piskel-f04829d58ccc6e4c9b8cbc51bb40276e.stex" ]
+
+[params]
+

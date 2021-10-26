@@ -1,0 +1,13 @@
+[remap]
+
+importer="com.technohacker.piskel"
+type="StreamTexture"
+path="res://.import/Player_Sheet.piskel-b5bc81d6757f117aa937703f7dcd16f4.stex"
+
+[deps]
+
+source_file="res://src/assets/sprites/Guns/WeaponHoldingSprites/Player_Sheet.piskel"
+dest_files=[ "res://.import/Player_Sheet.piskel-b5bc81d6757f117aa937703f7dcd16f4.stex" ]
+
+[params]
+

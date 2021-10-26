@@ -1,0 +1,13 @@
+[remap]
+
+importer="com.technohacker.piskel"
+type="StreamTexture"
+path="res://.import/doze.piskel-f8ab98020ab257e087166d2ea779d4be.stex"
+
+[deps]
+
+source_file="res://src/assets/sprites/Guns/Weapons Sprites/doze.piskel"
+dest_files=[ "res://.import/doze.piskel-f8ab98020ab257e087166d2ea779d4be.stex" ]
+
+[params]
+

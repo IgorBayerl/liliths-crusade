@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/scenes/level/testMap.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/scenes/actors/player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/scripts/Cam.gd" type="Script" id=4]
+
+[node name="Node2D" type="Node"]
+
+[node name="testMap" parent="." instance=ExtResource( 1 )]
+position = Vector2( 26.4606, -9.47129 )
+
+[node name="PlayerRoot" type="Node2D" parent="."]
+
+[node name="Player" parent="PlayerRoot" instance=ExtResource( 2 )]
+position = Vector2( 400.177, 328.464 )
+verticalDistanceFromLedge = -60
+horizontalDistanceFromLedge = 16
+have_wall_jump = true
+
+[node name="CamTest" type="Camera2D" parent="PlayerRoot/Player"]
+position = Vector2( -41.0967, 5.20161 )
+current = true
+zoom = Vector2( 5, 5 )
+process_mode = 0
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = true
+drag_margin_left = 0.05
+drag_margin_top = 0.3
+editor_draw_drag_margin = true
+script = ExtResource( 4 )
+
+[node name="Tween" type="Tween" parent="PlayerRoot/Player/CamTest"]
+playback_speed = 2.0
+playback/speed = 2.0
+
+[connection signal="GroundedUpdated" from="PlayerRoot/Player" to="PlayerRoot/Player/CamTest" method="_on_Player_GroundedUpdated"]

@@ -1,0 +1,13 @@
+[remap]
+
+importer="com.technohacker.piskel"
+type="StreamTexture"
+path="res://.import/Player_sheet_master.piskel-428922cc4f45c8cc25a96fcdd21025f0.stex"
+
+[deps]
+
+source_file="res://src/assets/sprites/player/Player_sheet_master.piskel"
+dest_files=[ "res://.import/Player_sheet_master.piskel-428922cc4f45c8cc25a96fcdd21025f0.stex" ]
+
+[params]
+

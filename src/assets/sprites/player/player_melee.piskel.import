@@ -1,0 +1,13 @@
+[remap]
+
+importer="com.technohacker.piskel"
+type="StreamTexture"
+path="res://.import/player_melee.piskel-35f083ed495a024df1a4833662f26eab.stex"
+
+[deps]
+
+source_file="res://src/assets/sprites/player/player_melee.piskel"
+dest_files=[ "res://.import/player_melee.piskel-35f083ed495a024df1a4833662f26eab.stex" ]
+
+[params]
+

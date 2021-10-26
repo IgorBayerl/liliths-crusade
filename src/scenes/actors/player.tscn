@@ -1,0 +1,445 @@
+[gd_scene load_steps=29 format=2]
+
+[ext_resource path="res://src/scripts/PlayerStateMachine.gd" type="Script" id=1]
+[ext_resource path="res://src/scripts/player.gd" type="Script" id=2]
+[ext_resource path="res://src/assets/sprites/light.png" type="Texture" id=3]
+[ext_resource path="res://src/assets/sprites/Guns/WeaponHoldingSprites/BigFuckingGunHand.piskel" type="Texture" id=4]
+[ext_resource path="res://src/assets/sound/effects/bfg shoot.ogg" type="AudioStream" id=5]
+[ext_resource path="res://src/assets/sound/effects/bfg chargel.ogg" type="AudioStream" id=6]
+[ext_resource path="res://src/assets/sprites/Guns/WeaponHoldingSprites/DozeHand.piskel" type="Texture" id=7]
+[ext_resource path="res://src/assets/sprites/player/player_melee.piskel" type="Texture" id=8]
+[ext_resource path="res://src/assets/sprites/player/Player_sheet_master.piskel" type="Texture" id=9]
+[ext_resource path="res://src/assets/sprites/player/Player Head.piskel" type="Texture" id=10]
+[ext_resource path="res://src/scripts/Raycaster.gd" type="Script" id=11]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 16.0
+height = 64.0
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 16.0
+height = 32.0
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 16, 48 )
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 16.0
+
+[sub_resource type="Animation" id=5]
+length = 0.307692
+loop = true
+step = 0.0769231
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.0769231, 0.153846, 0.230769 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 0.461538
+loop = true
+step = 0.0769231
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.0769231, 0.153846, 0.230769, 0.307692, 0.384615 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 4, 5, 6, 7, 8, 9 ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.769231
+loop = true
+step = 0.0769231
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.0769231, 0.153846, 0.230769, 0.307692, 0.384615, 0.461538, 0.538462, 0.615385, 0.692308 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 ]
+}
+
+[sub_resource type="Animation" id=8]
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=9]
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 4, 5, 6, 7, 4, 5, 6, 7 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Light2D:energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.7, 0.9, 1.3, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0, 1.0, 0.0, 1.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Charge:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Shoot:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.720463, 1.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "ClimbUp"
+length = 0.666667
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/path = NodePath("PlayerStructure/Sprites/body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 30, 31, 32, 33, 34, 35, 36, 37 ]
+}
+
+[sub_resource type="Animation" id=11]
+length = 2.0
+loop = true
+step = 0.0833333
+
+[sub_resource type="Animation" id=12]
+length = 0.166667
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/path = NodePath("PlayerStructure/Sprites/body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.0833333 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 27, 28 ]
+}
+
+[sub_resource type="Animation" id=13]
+length = 1.66667
+step = 0.333333
+tracks/0/type = "value"
+tracks/0/path = NodePath("PlayerStructure/Sprites/body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.333333, 0.666667, 1, 1.33333 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 10, 11, 12, 13, 11 ]
+}
+
+[sub_resource type="Animation" id=14]
+length = 0.166667
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/path = NodePath("PlayerStructure/Sprites/body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.0833333 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 25, 26 ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "LedgeGrab"
+step = 0.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("PlayerStructure/Sprites/body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 29 ]
+}
+
+[sub_resource type="Animation" id=16]
+length = 0.833333
+loop = true
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/path = NodePath("PlayerStructure/Sprites/body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333, 0.666667, 0.75 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+}
+
+[sub_resource type="Animation" id=17]
+resource_name = "WallSlide"
+length = 0.25
+loop = true
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/path = NodePath("PlayerStructure/Sprites/body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.0833333, 0.166667 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 14, 15, 16 ]
+}
+
+[node name="Player" type="KinematicBody2D"]
+script = ExtResource( 2 )
+verticalDistanceFromLedge = 1
+horizontalDistanceFromLedge = 1
+
+[node name="Label" type="Label" parent="."]
+margin_left = -19.6346
+margin_top = -118.016
+margin_right = 20.3654
+margin_bottom = -104.016
+text = "Label"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource( 1 )
+
+[node name="FullColision" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="CrouchedColision" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 16 )
+shape = SubResource( 2 )
+
+[node name="RaycastersSizeGuide" type="CollisionShape2D" parent="."]
+shape = SubResource( 3 )
+disabled = true
+
+[node name="Sensors" type="Node2D" parent="."]
+
+[node name="WallDetection" type="Node2D" parent="Sensors"]
+
+[node name="LeftRaycaster" type="Node2D" parent="Sensors/WallDetection"]
+script = ExtResource( 11 )
+buffer_size = 2
+raycast_visible = true
+
+[node name="RightRaycaster" type="Node2D" parent="Sensors/WallDetection"]
+script = ExtResource( 11 )
+buffer_size = 2
+raycast_visible = true
+
+[node name="GroundRaycaster" type="Node2D" parent="Sensors"]
+script = ExtResource( 11 )
+buffer_size = 5
+raycast_visible = true
+
+[node name="CeilingDetection" type="Area2D" parent="Sensors"]
+
+[node name="HeadArea" type="CollisionShape2D" parent="Sensors/CeilingDetection"]
+position = Vector2( 0, -32 )
+shape = SubResource( 4 )
+
+[node name="Timers" type="Node" parent="."]
+
+[node name="CoyoteTime" type="Timer" parent="Timers"]
+
+[node name="WallJumpDoubleJumpDelay" type="Timer" parent="Timers"]
+
+[node name="MeleeAtack" type="Timer" parent="Timers"]
+
+[node name="RolingTimer" type="Timer" parent="Timers"]
+
+[node name="WallSlideSticknes" type="Timer" parent="Timers"]
+wait_time = 0.2
+one_shot = true
+
+[node name="WallJumpBackMoveBlocker" type="Timer" parent="Timers"]
+wait_time = 0.5
+one_shot = true
+
+[node name="WallJumpCooldown" type="Timer" parent="Timers"]
+wait_time = 0.2
+one_shot = true
+
+[node name="PlayerStructure" type="Node2D" parent="."]
+
+[node name="Sprites" type="Node2D" parent="PlayerStructure"]
+
+[node name="player_melee" type="Sprite" parent="PlayerStructure/Sprites"]
+visible = false
+position = Vector2( 0, 48 )
+texture = ExtResource( 8 )
+offset = Vector2( -8, -75 )
+hframes = 19
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerStructure/Sprites/player_melee"]
+anims/atack_1 = SubResource( 5 )
+anims/atack_2 = SubResource( 6 )
+anims/atack_3 = SubResource( 7 )
+
+[node name="body" type="Sprite" parent="PlayerStructure/Sprites"]
+position = Vector2( 0, 48 )
+texture = ExtResource( 9 )
+offset = Vector2( 0, -60 )
+hframes = 39
+frame = 30
+
+[node name="head" type="Sprite" parent="PlayerStructure/Sprites"]
+position = Vector2( -1.33484, -34.0023 )
+texture = ExtResource( 10 )
+offset = Vector2( 1.34528, -3.38399 )
+
+[node name="Collision" type="Node2D" parent="PlayerStructure"]
+
+[node name="Guns" type="Node2D" parent="PlayerStructure"]
+
+[node name="ShoulderAxis" type="Position2D" parent="PlayerStructure/Guns"]
+position = Vector2( -8, -24 )
+
+[node name="BulletSpawn" type="Position2D" parent="PlayerStructure/Guns"]
+position = Vector2( 56, -8 )
+
+[node name="Sprites" type="Node2D" parent="PlayerStructure/Guns"]
+visible = false
+
+[node name="DozeHand" type="Sprite" parent="PlayerStructure/Guns/Sprites"]
+position = Vector2( 16, -8 )
+texture = ExtResource( 7 )
+
+[node name="AnimatedSprite" type="Sprite" parent="PlayerStructure/Guns/Sprites"]
+
+[node name="BGF" type="Sprite" parent="PlayerStructure/Guns/Sprites"]
+visible = false
+position = Vector2( 16, -8 )
+texture = ExtResource( 4 )
+hframes = 8
+frame = 4
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerStructure/Guns/Sprites/BGF"]
+anims/idle = SubResource( 8 )
+anims/shot = SubResource( 9 )
+
+[node name="Charge" type="AudioStreamPlayer2D" parent="PlayerStructure/Guns/Sprites/BGF"]
+stream = ExtResource( 6 )
+
+[node name="Shoot" type="AudioStreamPlayer2D" parent="PlayerStructure/Guns/Sprites/BGF"]
+stream = ExtResource( 5 )
+
+[node name="Light2D" type="Light2D" parent="PlayerStructure/Guns/Sprites/BGF"]
+position = Vector2( 1.9656, -0.106602 )
+texture = ExtResource( 3 )
+energy = 0.0
+
+[node name="LedgeGrabRaycasts" type="Node2D" parent="PlayerStructure"]
+position = Vector2( 0, 48 )
+
+[node name="LedgeRay_Vertical" type="RayCast2D" parent="PlayerStructure/LedgeGrabRaycasts"]
+position = Vector2( 26.9037, -117.552 )
+enabled = true
+cast_to = Vector2( 0, 12 )
+
+[node name="LedgeRay_Up_Horizontal" type="RayCast2D" parent="PlayerStructure/LedgeGrabRaycasts"]
+position = Vector2( 0, -120 )
+enabled = true
+cast_to = Vector2( 40, 0 )
+
+[node name="LedgeRay_Down_Horizontal" type="RayCast2D" parent="PlayerStructure/LedgeGrabRaycasts"]
+position = Vector2( 8, -96 )
+enabled = true
+cast_to = Vector2( 25, 0 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/ClimbUp = SubResource( 10 )
+anims/Death = SubResource( 11 )
+anims/Fall = SubResource( 12 )
+anims/Idle = SubResource( 13 )
+anims/Jump = SubResource( 14 )
+anims/LedgeGrab = SubResource( 15 )
+anims/Run = SubResource( 16 )
+anims/WallSlide = SubResource( 17 )
+
+[connection signal="timeout" from="Timers/WallSlideSticknes" to="StateMachine" method="_on_WallSlideSticknes_timeout"]
+[connection signal="timeout" from="Timers/WallJumpBackMoveBlocker" to="." method="_on_WallJumpBackMoveBlocker_timeout"]

@@ -1,0 +1,13 @@
+[remap]
+
+importer="com.technohacker.piskel"
+type="StreamTexture"
+path="res://.import/Lilith_Estatua.piskel-8e7885a99b5e5a957aa0843079c1a720.stex"
+
+[deps]
+
+source_file="res://src/assets/sprites/StaticActors/Lilith_Estatua.piskel"
+dest_files=[ "res://.import/Lilith_Estatua.piskel-8e7885a99b5e5a957aa0843079c1a720.stex" ]
+
+[params]
+

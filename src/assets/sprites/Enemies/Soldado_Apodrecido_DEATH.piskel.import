@@ -1,0 +1,13 @@
+[remap]
+
+importer="com.technohacker.piskel"
+type="StreamTexture"
+path="res://.import/Soldado_Apodrecido_DEATH.piskel-35eee7e8f076f443abaa281f2037e20d.stex"
+
+[deps]
+
+source_file="res://src/assets/sprites/Enemies/Soldado_Apodrecido_DEATH.piskel"
+dest_files=[ "res://.import/Soldado_Apodrecido_DEATH.piskel-35eee7e8f076f443abaa281f2037e20d.stex" ]
+
+[params]
+

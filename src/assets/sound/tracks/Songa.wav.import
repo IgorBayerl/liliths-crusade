@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Songa.wav-87c1b6927afa301e2d67cf743d32afc2.sample"
+
+[deps]
+
+source_file="res://src/assets/sound/tracks/Songa.wav"
+dest_files=[ "res://.import/Songa.wav-87c1b6927afa301e2d67cf743d32afc2.sample" ]
+
+[params]
+
+force/8_bit=true
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

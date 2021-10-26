@@ -1,0 +1,13 @@
+[remap]
+
+importer="com.technohacker.piskel"
+type="StreamTexture"
+path="res://.import/flame.piskel-431619962920e3897cc5bca9e5bcedba.stex"
+
+[deps]
+
+source_file="res://src/assets/sprites/Guns/Weapons Sprites/flame.piskel"
+dest_files=[ "res://.import/flame.piskel-431619962920e3897cc5bca9e5bcedba.stex" ]
+
+[params]
+

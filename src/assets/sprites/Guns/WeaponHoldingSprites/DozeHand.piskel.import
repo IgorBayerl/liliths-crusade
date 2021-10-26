@@ -1,0 +1,13 @@
+[remap]
+
+importer="com.technohacker.piskel"
+type="StreamTexture"
+path="res://.import/DozeHand.piskel-ef66b28736d99602acef14a7242833dd.stex"
+
+[deps]
+
+source_file="res://src/assets/sprites/Guns/WeaponHoldingSprites/DozeHand.piskel"
+dest_files=[ "res://.import/DozeHand.piskel-ef66b28736d99602acef14a7242833dd.stex" ]
+
+[params]
+

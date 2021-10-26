@@ -1,0 +1,13 @@
+[remap]
+
+importer="com.technohacker.piskel"
+type="StreamTexture"
+path="res://.import/BigFuckingGunHand.piskel-5e79269725264323eaea1120e2524297.stex"
+
+[deps]
+
+source_file="res://src/assets/sprites/Guns/WeaponHoldingSprites/BigFuckingGunHand.piskel"
+dest_files=[ "res://.import/BigFuckingGunHand.piskel-5e79269725264323eaea1120e2524297.stex" ]
+
+[params]
+

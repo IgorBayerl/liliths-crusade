@@ -1,0 +1,72 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/Scripts/Guns_Bar.gd" type="Script" id=1]
+[ext_resource path="res://src/Assets/Sprites/UI_elements/gunSlot.png" type="Texture" id=2]
+[ext_resource path="res://src/Actors/EveryGunSprite.tscn" type="PackedScene" id=3]
+
+[sub_resource type="StyleBoxTexture" id=1]
+
+[node name="Guns_bar" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -174.0
+margin_bottom = 60.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -117.0
+margin_right = 93.0
+margin_bottom = 65.0
+texture = ExtResource( 2 )
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -63.2599
+margin_top = -20.0
+margin_right = 60.7401
+margin_bottom = 20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" parent="Panel/CenterContainer" instance=ExtResource( 3 )]
+position = Vector2( 37.6007, 5.77798 )
+scale = Vector2( 0.809241, 0.812161 )
+centered = true
+
+[node name="Label" type="Label" parent="Panel"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -73.2274
+margin_top = -35.9099
+margin_right = -24.2274
+margin_bottom = -16.9099
+text = "222"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

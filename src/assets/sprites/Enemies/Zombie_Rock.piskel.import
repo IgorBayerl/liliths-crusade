@@ -1,0 +1,13 @@
+[remap]
+
+importer="com.technohacker.piskel"
+type="StreamTexture"
+path="res://.import/Zombie_Rock.piskel-289bf360ce781658a55d0b827652492e.stex"
+
+[deps]
+
+source_file="res://src/assets/sprites/Enemies/Zombie_Rock.piskel"
+dest_files=[ "res://.import/Zombie_Rock.piskel-289bf360ce781658a55d0b827652492e.stex" ]
+
+[params]
+

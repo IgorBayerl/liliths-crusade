@@ -1,0 +1,13 @@
+[remap]
+
+importer="com.technohacker.piskel"
+type="StreamTexture"
+path="res://.import/SubmachineHand.piskel-0c321b0e8b7b3d205943caa72b62e2a3.stex"
+
+[deps]
+
+source_file="res://src/assets/sprites/Guns/WeaponHoldingSprites/SubmachineHand.piskel"
+dest_files=[ "res://.import/SubmachineHand.piskel-0c321b0e8b7b3d205943caa72b62e2a3.stex" ]
+
+[params]
+

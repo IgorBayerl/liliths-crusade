@@ -1,0 +1,13 @@
+[remap]
+
+importer="com.technohacker.piskel"
+type="StreamTexture"
+path="res://.import/pistoila.piskel-d1a0841e22f9c5bed4af1e1af58336fc.stex"
+
+[deps]
+
+source_file="res://src/assets/sprites/Guns/Weapons Sprites/pistoila.piskel"
+dest_files=[ "res://.import/pistoila.piskel-d1a0841e22f9c5bed4af1e1af58336fc.stex" ]
+
+[params]
+

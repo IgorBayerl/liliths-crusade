@@ -1,0 +1,13 @@
+[remap]
+
+importer="com.technohacker.piskel"
+type="StreamTexture"
+path="res://.import/PistolHand.piskel-27cf77a42d3de8f99ea66a4e28eae43f.stex"
+
+[deps]
+
+source_file="res://src/assets/sprites/Guns/WeaponHoldingSprites/PistolHand.piskel"
+dest_files=[ "res://.import/PistolHand.piskel-27cf77a42d3de8f99ea66a4e28eae43f.stex" ]
+
+[params]
+

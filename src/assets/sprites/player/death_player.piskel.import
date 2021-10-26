@@ -1,0 +1,13 @@
+[remap]
+
+importer="com.technohacker.piskel"
+type="StreamTexture"
+path="res://.import/death_player.piskel-26a6947940b00e279a857b0f06013534.stex"
+
+[deps]
+
+source_file="res://src/assets/sprites/player/death_player.piskel"
+dest_files=[ "res://.import/death_player.piskel-26a6947940b00e279a857b0f06013534.stex" ]
+
+[params]
+

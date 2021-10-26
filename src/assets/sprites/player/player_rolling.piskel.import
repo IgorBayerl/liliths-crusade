@@ -1,0 +1,13 @@
+[remap]
+
+importer="com.technohacker.piskel"
+type="StreamTexture"
+path="res://.import/player_rolling.piskel-3dcf17b7460d1db99a1c50c4c19be539.stex"
+
+[deps]
+
+source_file="res://src/assets/sprites/player/player_rolling.piskel"
+dest_files=[ "res://.import/player_rolling.piskel-3dcf17b7460d1db99a1c50c4c19be539.stex" ]
+
+[params]
+
